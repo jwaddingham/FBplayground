@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+  <title>Facebook testing playground</title>
+</head>
+<body>
+ <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '121056181249343',
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <h1>Facebook tests go here</h1>
+    <p>Here is where the tests go</p>
+    <p>Here is a share dialog</p>
+    <div>
+    FB.ui(
+  {
+    method: 'share',
+    href: 'https://developers.facebook.com/docs/',
+  },
+  function(response) {
+    if (response && !response.error_code) {
+      alert('Posting completed.');
+    } else {
+      alert('Error while posting.');
+    }
+  }
+);
+    </div>
+    </body>
+    </html>
